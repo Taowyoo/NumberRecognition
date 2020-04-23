@@ -9,34 +9,34 @@
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.yuxiang.PrimaryController">
     <Tab text="Draw">
         <AnchorPane prefHeight="400" prefWidth="600.0">
-            <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                <Canvas fx:id="canvasDraw" height="370.0" width="370.0">
+            <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" style="-fx-background-color: #F5F5DC;">
+                <Canvas fx:id="canvasDraw" height="365.0" width="365.0">
                 </Canvas>
-                <VBox alignment="CENTER" spacing="10.0" style="-fx-background-color: #F5F5DC;" HBox.hgrow="ALWAYS">
+                <VBox alignment="CENTER" spacing="5.0"  HBox.hgrow="ALWAYS">
 
                     <ToggleButton fx:id="btnDraw" prefWidth="100.0" text="Draw" />
                     <Button fx:id="btnClear" layoutX="10.0" layoutY="10.0" onAction="#btnClearOnAction" prefWidth="100.0" text="Clear" />
-                    <Label fx:id="labelLineWidth" prefWidth="100.0"><graphic>
+                    <Label fx:id="labelLineWidth" prefWidth="120.0"><graphic>
                         <Label text="Line width:" />
                     </graphic>
                     </Label>
                     <Slider fx:id="slider" blockIncrement="5.0" max="50.0" min="1.0" minorTickCount="1" showTickLabels="true" showTickMarks="true" value="10.0">
                         <VBox.margin>
-                            <Insets left="40.0" right="40.0" />
+                            <Insets left="30.0" right="30.0" />
                         </VBox.margin>
                     </Slider>
-                    <Button fx:id="btnSave" layoutX="99.0" layoutY="170.0" onAction="#btnSubmitOnAction" prefWidth="100.0" text="Submit" />
+                    <Button fx:id="btnSave" layoutX="99.0" layoutY="170.0" onAction="#btnSaveOnAction" prefWidth="100.0" text="Save Draw" />
                     <Button fx:id="btnSubmit" layoutX="99.0" layoutY="170.0" onAction="#btnSubmitOnAction" prefWidth="100.0" text="Submit" />
-                    <Label prefWidth="150.0" text="Most possible result:" />
-                    <Label fx:id="labelResult1" prefWidth="120.0">
+                    <Label prefWidth="170.0" text="Most possible result:" />
+                    <Label fx:id="labelResult1Possibility" prefWidth="120.0">
                         <graphic>
-                            <Label fx:id="labelResult1Possibility" />
+                            <Label fx:id="labelResult1" prefWidth="60.0" />
                         </graphic>
                     </Label>
-                    <Label prefWidth="150.0" text="Secondary possible result:" />
-                    <Label fx:id="labelResult2" prefWidth="120.0">
+                    <Label prefWidth="170.0" text="Secondary possible result:" />
+                    <Label fx:id="labelResult2Possibility" prefWidth="120.0">
                         <graphic>
-                            <Label fx:id="labelResult2Possibility" />
+                            <Label fx:id="labelResult2" prefWidth="60.0" />
                         </graphic>
                     </Label>
                 </VBox>
@@ -46,26 +46,25 @@
 
     <Tab text="Choose Image File">
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-            <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"  style="-fx-background-color: #F5F5DC;" >
                 <ImageView fx:id="imageView" fitHeight="370" fitWidth="370.0">
                 </ImageView>
-                <VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: #F5F5DC;" HBox.hgrow="ALWAYS">
+                <VBox alignment="CENTER" spacing="5.0" HBox.hgrow="ALWAYS">
                     <HBox.margin>
                         <Insets />
                     </HBox.margin>
-                    <Button fx:id="btnChoose" onAction="#btnChooseOnAction" prefWidth="100.0" text="Choose Image File" />
-
+                    <Button fx:id="btnChoose" onAction="#btnChooseOnAction"  text="Choose Image File" />
                     <Button fx:id="btnSubmitFile" layoutX="99.0" layoutY="170.0" onAction="#btnSubmitFileOnAction" prefWidth="100.0" text="Submit" />
-                    <Label prefWidth="150.0" text="Most possible result:" />
-                    <Label fx:id="labelResult1File" prefWidth="100.0">
+                    <Label prefWidth="170.0" text="Most possible result:" />
+                    <Label fx:id="labelResult1PossibilityFile" prefWidth="120.0">
                         <graphic>
-                            <Label fx:id="labelResult1PossibilityFile" />
+                            <Label fx:id="labelResult1File" prefWidth="60.0" />
                         </graphic>
                     </Label>
-                    <Label prefWidth="150.0" text="Secondary possible result:" />
-                    <Label fx:id="labelResult2File" prefWidth="100.0">
+                    <Label prefWidth="170.0" text="Secondary possible result:" />
+                    <Label fx:id="labelResult2PossibilityFile" prefWidth="120.0">
                         <graphic>
-                            <Label fx:id="labelResult2PossibilityFile" />
+                            <Label fx:id="labelResult2File" prefWidth="60.0" />
                         </graphic>
                     </Label>
                 </VBox>

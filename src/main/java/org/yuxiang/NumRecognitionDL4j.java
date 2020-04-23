@@ -1,3 +1,10 @@
+/*
+ * Copyright (c)  2019-2020, YuxiangCao
+ * File Name: NumRecognitionDL4j.java
+ * Date: 4/22/20, 3:53 PM
+ * Description: Class for import trained model from TensorFlow keras and use it
+ */
+
 package org.yuxiang;
 
 import org.datavec.image.loader.NativeImageLoader;
@@ -9,7 +16,7 @@ import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.dataset.api.preprocessor.ImagePreProcessingScaler;
 import org.nd4j.linalg.io.ClassPathResource;
 
-import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -63,7 +70,7 @@ public class NumRecognitionDL4j extends NumRecognition{
         scaler = new ImagePreProcessingScaler(0, 1);
 
     }
-    public float[] recognize(Image img) throws IOException {
+    public float[] recognize(BufferedImage img) throws IOException {
         // het the image into an INDArray
         INDArray  image = loader.asMatrix(img);
         // normalize echo pixel in the image from 0-255 to 0-1
@@ -74,7 +81,12 @@ public class NumRecognitionDL4j extends NumRecognition{
         LOGGER.log(Level.INFO,"LabelList:");
         LOGGER.log(Level.INFO,labelList.toString());
         LOGGER.log(Level.INFO,"Predict Result(Probability):");
-        LOGGER.log(Level.INFO,res.toString());
+        LOGGER.log(Level.INFO,output.toString());
+        for (float i : res) {
+            System.out.print(i);
+            System.out.print(" ");
+        }
+        System.out.println();
         return res;
     }
 
