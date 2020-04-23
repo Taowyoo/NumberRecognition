@@ -1,6 +1,13 @@
+/*
+ * Copyright (c)  2019-2020, YuxiangCao
+ * File Name: NumRecognition.java
+ * Date: 4/22/20, 3:54 PM
+ * Description: Abstract Class for number recognition classes for different implement of model utility
+ */
+
 package org.yuxiang;
 
-import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.util.List;
 
 public abstract class NumRecognition {
@@ -16,7 +23,7 @@ public abstract class NumRecognition {
      * @return the probability array of labels
      * @throws Exception any exception while process
      */
-    public abstract float[] recognize(Image img) throws Exception;
+    public abstract float[] recognize(BufferedImage img) throws Exception;
 
     public abstract List<Integer> getLabelList();
 }
